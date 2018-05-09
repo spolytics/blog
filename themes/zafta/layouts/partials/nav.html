@@ -1,0 +1,16 @@
+
+<div class="list-group">
+  {{ $Params := .Params }}
+  {{ $url := index (split .URL "/") 2 }}
+  {{ range $name, $items := .Site.Taxonomies.categories }}
+    <a
+     class="list-group-item list-group-item-action {{if eq $url $name}} list-group-item active {{end}} {{if $Params.categories}} {{if eq (index $Params.categories 0 | lower) $name}} list-group-item active {{end}} {{end}} d-flex align-items-center justify-content-between"
+      href="{{ $.Site.BaseURL }}categories/{{ $name | urlize | lower }}"
+    >
+      {{ $name | title }}
+      <span class="badge badge-primary badge-pill">
+        {{ len $items }}
+      </span>
+    </a>
+  {{ end }}
+</div>

@@ -1,0 +1,8 @@
+
+baseURL = "https://blog.spolytics.com/"
+languageCode = "en-us"
+title = "spolytics blog"
+theme = "zafta"
+publishDir = "docs"
+[taxonomies]
+  category = "categories"
